@@ -41,7 +41,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # The RSpec testing framework
   gem 'rspec-rails'
-
+  gem 'shoulda-matchers', '~> 3.0', require: false
   # The following gems aids with the nuts and bolts
   # of interacting with the browser.
   gem 'webdrivers'
