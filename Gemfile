@@ -4,8 +4,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
-gem 'factory_bot'
-gem 'hirb'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 # Use sqlite3 as the database for Active Record
@@ -41,6 +40,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # The RSpec testing framework
+  gem 'factory_bot_rails'
+  gem 'faker', '~> 2.12'
+  gem 'hirb'
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.0', require: false
   # The following gems aids with the nuts and bolts
@@ -62,9 +64,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
-  gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
