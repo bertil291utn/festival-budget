@@ -23,14 +23,14 @@
   </div>
   <div class="row">
     <div class='col-md-5'>
-      <%= form.label :email, 'e-mail:' %>
+      <%= form.label :email, 'E-mail:' %>
       <%= form.email_field :email, class: 'form-control' %>
     </div>
   </div>
   <div class="row pt-4">
-    <div class='col'>
-      <%= form.submit 'Create User', class: 'btn btn-success' %>
-      <%= link_to 'Cancel', root_path, class: 'btn btn-danger' %>
+    <div class='col-md-5'>
+      <%= form.submit 'Sign up', class: 'btn btn-success' %>
+      <%#= link_to 'Cancel', root_path, class: 'btn btn-danger' %>
     </div>
   </div>
 <% end %>
