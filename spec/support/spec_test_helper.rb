@@ -1,10 +1,8 @@
 module SpecTestHelper
-  def login(user)
-    visit '/signup'
-    fill_in 'user[fullname]', with: user.fullname
-    fill_in 'user[username]', with: user.username
-    fill_in 'user[email]', with: user.email
-    click 'Sign up'
+  def login_help(user)
+    visit '/login'
+    fill_in 'username', with: user.username
+    click_on 'Login'
   end
 
   def current_user
