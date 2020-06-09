@@ -1,15 +1,18 @@
-<h1>Login</h1>
-<%= form_tag sessions_path do |form| %>
-  <div class='row'>
-    <div class='col-md-5'>
-      <%= label_tag :username, 'Username: ' %>
-      <%= text_field_tag :username, '', class: 'form-control'%>
-    </div>
+<div class="row align-items-center h-100">
+  <div class="mx-auto w-50">
+    <%= form_tag sessions_path do |form| %>
+      <div class='row'>
+        <div class='col'>
+          <%= label_tag :username, 'Username: ' %>
+          <%= text_field_tag :username, '', class: 'form-control'%>
+        </div>
+      </div>
+      <div class='row pt-3'>
+        <div class='col'>
+          <%= submit_tag 'Login', class: 'btn btn-success w-100' %>
+          <%= link_to 'Sign Up', signup_path, class: 'btn btn-link pt-3 w-100' %>
+        </div>
+      </div>
+    <% end %>
   </div>
-  <div class='row pt-3'>
-    <div class='col-md-5'>
-      <%= submit_tag 'Login', class: 'btn btn-success w-100' %>
-      <%= link_to 'Sign Up', signup_path, class: 'btn pt-3 w-100' %>
-    </div>
-  </div>
-<% end %>
+</div>

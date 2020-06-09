@@ -10,27 +10,27 @@
     </div>
   <% end %>
   <div class="row">
-    <div class='col-md-5'>
+    <div class='col'>
       <%= form.label :fullname, 'Fullname:' %>
       <%= form.text_field :fullname, class: 'form-control' %>
     </div>
   </div>
   <div class="row">
-    <div class='col-md-5'>
+    <div class='col'>
       <%= form.label :username, 'Username:' %>
       <%= form.text_field :username, class: 'form-control' %>
     </div>
   </div>
   <div class="row">
-    <div class='col-md-5'>
+    <div class='col'>
       <%= form.label :email, 'E-mail:' %>
       <%= form.email_field :email, class: 'form-control' %>
     </div>
   </div>
   <div class="row pt-4">
-    <div class='col-md-5'>
+    <div class='col'>
       <%= form.submit 'Sign up', class: 'btn btn-success w-100' %>
-      <%= link_to 'Log in', login_path, class: 'btn pt-3 w-100' %>
+      <%= link_to 'Log in', login_path, class: 'btn btn-link pt-3 w-100' %>
     </div>
   </div>
 <% end %>

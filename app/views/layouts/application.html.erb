@@ -42,7 +42,8 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <div class="container pt-3">
+    <!-- <div class="container <%= 'w-50' unless current_user%>">-->
+    <div class="container h-100">
       <%= yield %>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
