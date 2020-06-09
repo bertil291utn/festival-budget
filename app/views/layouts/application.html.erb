@@ -9,9 +9,33 @@
     <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
   </head>
   <body>
-    <nav>
-      this is the navbar 
-    </nav>
+    <% if current_user %>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="/">Events</a>
+        <span class="navbar-text">
+          Logged in as <strong><%= current_user.fullname %></strong>
+        </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse float-right" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <%#= link_to 'All events', root_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%#= link_to 'My events', user_path(session[:user_id]), class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%#= link_to 'My attending events', attended_events_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Log Out', logout_path, class: 'nav-link' %>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <% end %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
