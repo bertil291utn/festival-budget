@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get 'myprofile', to: 'users#show', as: 'myprofile'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
+  get 'main', to: 'sessions#show', as: 'main'
   root 'users#show'
 end

@@ -12,24 +12,28 @@
  *= require_tree .
  *= require_self
  */
+$texto-primary: #434b54;
+$texto-secondary: #555e67;
+$texto-tertiary: #878a8f;
+$texto-last: #989da3;
 
 html,
 body {
   height: 100%;
 }
 
-.text-primary {
-  color: #434b54;
+form, .form {
+  input[type='submit'] {
+    text-transform: uppercase;
+  }
+  a.btn {
+    text-transform: uppercase;
+  }
+  a.btn-link {
+    color: $texto-tertiary;
+  }
+  a.btn-link:hover {
+    text-decoration: none;
+  }
 }
 
-.text-secondary {
-  color: #555e67;
-}
-
-.text-tertiary {
-  color: #878a8f;
-}
-
-.text-last {
-  color: #989da3;
-}
