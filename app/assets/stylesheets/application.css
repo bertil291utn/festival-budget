@@ -9,26 +9,27 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
+ *= require_tree .
+ *= require_self
  */
-
 
 html,
 body {
   height: 100%;
 }
 
-$body-bg: #e2e2e2;
+.text-primary {
+  color: #434b54;
+}
 
-$theme-colors: (
-  'primary': #ff304f,
-  'secondary': #cacaca,
-  'success': #015668,
-  'info': #0f81c7,
-  'warning': #0de2ea,
-  'danger': #06648c,
-  'light': #ececec,
-  'dark': #222222,
-);
+.text-secondary {
+  color: #555e67;
+}
 
-@import 'bootstrap';
+.text-tertiary {
+  color: #878a8f;
+}
+
+.text-last {
+  color: #989da3;
+}
