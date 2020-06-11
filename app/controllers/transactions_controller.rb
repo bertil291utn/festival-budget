@@ -3,6 +3,7 @@ class TransactionsController < ApplicationController
     @transactions = User.find(current_user.id).transactions.with_festival
     # @total = '%<0.2>f' % [@transactions.sum(:amount)]
     @total = @transactions.sum(:amount)
+    # @total = @transactions.inject(0) { |suma, t| suma + t.amount }
   end
 
   def new

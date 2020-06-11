@@ -4,12 +4,12 @@
     <title>FestivalBudget</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
     <% if current_user %>
-      <nav class="navbar navbar-expand-md bg-primary">
+      <nav class="navbar navbar-expand-md bg-primary nav">
         <a class="navbar-brand" href="/">Budget Fest</a>
         <span class="navbar-text">
           Logged in as <strong><%= current_user.fullname %></strong>
@@ -41,7 +41,6 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <!-- <div class="container <%= 'w-50' unless current_user%>">-->
     <div class="container h-100">
       <%= yield %>
     </div>
