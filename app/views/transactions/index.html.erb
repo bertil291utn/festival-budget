@@ -1,0 +1,14 @@
+<%# ><%= number_to_currency(client.payment, :unit => "$", :separator => ".", :delimiter => ",")  %>
+<article class="timeline">
+  <p> Your piglet is: <%= number_to_currency(@total)%></p>
+  <ul class="posts">
+    <%@transactions.each do |t|%>
+      <li>
+        <%= image_tag t.image_festival%>
+        <p><%=t.description%></p>
+        <p><%=number_to_currency(t.amount)%></p>
+        <p><%=t.name_festival%></p>
+      </li>
+    <%end%>
+  </ul>
+</article>

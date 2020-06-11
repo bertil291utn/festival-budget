@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :transactions
   resources :users, only: %i[new create index]
   resources :sessions, only: %i[new create destroy]
+  resources :transactions, only: %i[new create index]
   get 'signup', to: 'users#new', as: 'signup'
   get 'myprofile', to: 'users#index', as: 'myprofile'
   get 'login', to: 'sessions#new', as: 'login'
