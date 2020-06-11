@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'transactions/show'
+  get 'transactions/new'
+  get 'transactions/create'
   resources :users, only: %i[new create show]
   resources :sessions, only: %i[new create destroy]
   get 'signup', to: 'users#new', as: 'signup'
