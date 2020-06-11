@@ -1,25 +1,7 @@
-@font-face {
-  font-family: 'proxima_novabold';
-  src: url('app/assets/fonts/proxima-nova-bold-webfont.woff2') format('woff2'),
-    url('app/assets/fonts/proxima-nova-bold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'proxima_novalight';
-  src: url('app/assets/fonts/proxima-nova-light-webfont.woff2') format('woff2'),
-    url('app/assets/fonts/proxima-nova-light-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 $body-bg: #f1f3f2;
 $body-color: #434b54;
 
-$font-family-sans-serif: "proxima_novalight", sans-serif;
-
-
+$font-family-sans-serif: 'proxima_novalight', sans-serif;
 $theme-colors: (
   'primary': #3778c2,
   'secondary': #5fb523,

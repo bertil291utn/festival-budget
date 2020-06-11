@@ -12,6 +12,23 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+  font-family: 'proxima_novabold';
+  src: asset-url('proxima-nova-bold-webfont.woff2') format('woff2'),
+    asset-url('proxima-nova-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'proxima_novalight';
+  src: asset-url('proxima-nova-light-webfont.woff2') format('woff2'),
+    asset-url('proxima-nova-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 $texto-primary: #434b54;
 $texto-secondary: #555e67;
 $texto-tertiary: #878a8f;
@@ -20,9 +37,15 @@ $texto-last: #989da3;
 html,
 body {
   height: 100%;
+  
 }
 
-form, .form {
+.font-bold {
+  font-family: 'proxima_novabold';
+}
+
+form,
+.form {
   input[type='submit'] {
     text-transform: uppercase;
   }
@@ -36,4 +59,3 @@ form, .form {
     text-decoration: none;
   }
 }
-
