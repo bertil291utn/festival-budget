@@ -58,4 +58,32 @@ form,
   a.btn-link:hover {
     text-decoration: none;
   }
+
+  #error_explanation {
+    h2 {
+      font-size: 1em;
+    }
+    ul {
+      color: #f00;
+    }
+  }
+}
+
+.notice {
+  background-color: #d4f6c6;
+}
+
+.alert {
+  background-color: #f6cfc6;
+}
+
+.notice,
+.alert {
+  margin-bottom: 8px;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  padding: 5px;
+  color: dimgrey;
+  font-size: 14px;
 }

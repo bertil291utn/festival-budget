@@ -9,23 +9,14 @@
       </ul>
     </div>
   <% end %>
-  <div class="row">
-    <div class='col'>
-      <%= form.label :fullname, 'Fullname:' %>
-      <%= form.text_field :fullname, class: 'form-control' %>
-    </div>
+  <div class="form-group">
+    <%= form.text_field :fullname, class: 'form-control',placeholder: 'Fullname' %>
   </div>
-  <div class="row">
-    <div class='col'>
-      <%= form.label :username, 'Username:' %>
-      <%= form.text_field :username, class: 'form-control' %>
-    </div>
+  <div class="form-group">
+    <%= form.text_field :username, class: 'form-control',placeholder: 'Username' %>
   </div>
-  <div class="row">
-    <div class='col'>
-      <%= form.label :email, 'E-mail:' %>
-      <%= form.email_field :email, class: 'form-control' %>
-    </div>
+  <div class="form-group">
+    <%= form.email_field :email, class: 'form-control',placeholder: 'E-mail' %>
   </div>
   <div class="row pt-4">
     <div class='col'>

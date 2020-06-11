@@ -3,8 +3,7 @@
     <%= form_tag sessions_path do |form| %>
       <div class='row'>
         <div class='col'>
-          <%= label_tag :username, 'Username: ' %>
-          <%= text_field_tag :username, '', class: 'form-control'%>
+          <%= text_field_tag :username, '', class: 'form-control',placeholder: 'Username'%>
         </div>
       </div>
       <div class='row pt-3'>
