@@ -1,6 +1,6 @@
 class Transaction < ApplicationRecord
   belongs_to :author_transaction, class_name: :User, foreign_key: :user_id
-  belongs_to :festival
+  belongs_to :festival, optional: true
 
   validates :description, :amount, presence: true
   validates :description, length: { minimum: 7 }
