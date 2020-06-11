@@ -1,17 +1,8 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *= require_tree .
- *= require_self
- */
+$texto-primary: #434b54;
+$texto-secondary: #555e67;
+$texto-tertiary: #878a8f;
+$texto-last: #989da3;
+$texto-light: #faf9fa;
 
 @font-face {
   font-family: 'proxima_novabold';
@@ -29,15 +20,9 @@
   font-style: normal;
 }
 
-$texto-primary: #434b54;
-$texto-secondary: #555e67;
-$texto-tertiary: #878a8f;
-$texto-last: #989da3;
-
 html,
 body {
   height: 100%;
-  
 }
 
 .font-bold {
@@ -69,14 +54,6 @@ form,
   }
 }
 
-.notice {
-  background-color: #d4f6c6;
-}
-
-.alert {
-  background-color: #f6cfc6;
-}
-
 .notice,
 .alert {
   margin-bottom: 8px;
@@ -84,6 +61,42 @@ form,
   height: 30px;
   text-align: center;
   padding: 5px;
-  color: dimgrey;
   font-size: 14px;
+}
+
+.texto-light {
+  color: $texto-light;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 48px;
+  color: $texto-light;
+
+  .menu {
+    width: 80%;
+    justify-content: space-between;
+
+    .menu-item {
+      float: left;
+      margin: 0 15px;
+
+      .active {
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.nav a {
+  color: $texto-light;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.nav a:hover {
+  color: #fff;
 }
