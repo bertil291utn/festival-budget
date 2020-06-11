@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
 
+  def index
+    @user = current_user if sign_in?
+  end
+
   def new
     @user = User.new
   end
@@ -13,10 +17,6 @@ class UsersController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @user = current_user if sign_in?
   end
 
   private

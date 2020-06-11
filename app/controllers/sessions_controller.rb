@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: %i[new create show]
+  skip_before_action :require_login, only: %i[new create index]
 
+  def index; end
   def new; end
-  def show; end
 
   def create
     user = User.find_by_username(params[:username])
