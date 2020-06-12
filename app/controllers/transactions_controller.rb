@@ -8,13 +8,17 @@ class TransactionsController < ApplicationController
 
   def new
     @transaction = Transaction.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
     @transaction = Transaction.new(transaction_params)
     render :new, notice: 'Something went wrong!' unless @transaction.save
 
-    redirect_to transactions_path, notice: 'Thanks for feeding the piglet'
+    redirect_to transactions_path, notice: 'Thanks for feeding the piglet &#128055;'
   end
 
   private
