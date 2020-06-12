@@ -5,7 +5,6 @@ class TransactionsController < ApplicationController
   end
 
   def new
-    @festival_options = Festival.all.map { |f| [f.name, f.id] }
     @transaction = Transaction.new
     respond_to do |format|
       format.html
@@ -16,9 +15,9 @@ class TransactionsController < ApplicationController
   def create
     user = current_user
     @transaction = user.transactions.build(transaction_params)
-    render :new, notice: 'Something went wrong!' unless @transaction.save
+    return render :new unless @transaction.save
 
-    redirect_to transactions_path, notice: 'Thanks for feeding the piglet &#128055;'
+    redirect_to transactions_path, notice: 'Thanks for feeding the piglet'
   end
 
   private
