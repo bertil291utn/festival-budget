@@ -3,9 +3,5 @@
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(function () {
-  $('.btn-group-fab').on('click', '.btn', function () {
-    console.log('Dentro del jquery transaction');
-    $('.btn-group-fab').toggleClass('active');
-  });
   $('has-tooltip').tooltip();
 });

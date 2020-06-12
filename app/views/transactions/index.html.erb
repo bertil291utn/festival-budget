@@ -1,15 +1,9 @@
-<%= link_to 'Add transactions', new_transaction_path,  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: 'btn btn-primary btn-lg'}  %>
-<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content"></div>
-  </div>
-</div>
 <article class="timeline">
   <p> Your piglet is: <%= number_to_currency(@total)%></p>
   <ul class="posts">
     <%@transactions.each do |t|%>
       <li>
-        <%= image_tag t.image_festival%>
+        <%= image_tag t.image_festival, class:'w-50'%>
         <p><%=t.description%></p>
         <p><%=number_to_currency(t.amount)%></p>
         <p><%=t.name_festival%></p>
@@ -19,9 +13,11 @@
 </article>
 <div class="btn-group-fab" role="group" aria-label="FAB Menu">
   <div>
-    <button type="button" class="btn btn-main btn-primary has-tooltip bg-secondary" data-placement="left" title="Menu"> <i class="fa fa-plus"></i> </button>
-    <%# <button type="button" class="btn btn-sub btn-info has-tooltip" data-placement="left" title="Fullscreen"> <i class="fa fa-arrows-alt"></i> </button>
-    <button type="button" class="btn btn-sub btn-danger has-tooltip" data-placement="left" title="Save"> <i class="fa fa-floppy-o"></i> </button>
-    <button type="button" class="btn btn-sub btn-warning has-tooltip" data-placement="left" title="Download"> <i class="fa fa-download"></i> </button> %>
+    <%= link_to '<button type="button" class="btn btn-main btn-secondary has-tooltip" data-placement="left" title="Menu"> <i class="fa fa-plus"></i> </button>'.html_safe, new_transaction_path,  {remote: :true, 'data-toggle': 'modal', 'data-target': '#modal-window'} %>
+  </div>
+</div>
+<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content"></div>
   </div>
 </div>

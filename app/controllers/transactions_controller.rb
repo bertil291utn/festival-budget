@@ -1,12 +1,11 @@
 class TransactionsController < ApplicationController
   def index
     @transactions = User.find(current_user.id).transactions.with_festival
-    # @total = '%<0.2>f' % [@transactions.sum(:amount)]
     @total = @transactions.sum(:amount)
-    # @total = @transactions.inject(0) { |suma, t| suma + t.amount }
   end
 
   def new
+    @festival_options = Festival.all.map { |f| [f.name, f.id] }
     @transaction = Transaction.new
     respond_to do |format|
       format.html
@@ -15,7 +14,8 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    @transaction = Transaction.new(transaction_params)
+    user = current_user
+    @transaction = user.transactions.build(transaction_params)
     render :new, notice: 'Something went wrong!' unless @transaction.save
 
     redirect_to transactions_path, notice: 'Thanks for feeding the piglet &#128055;'
@@ -24,6 +24,6 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:description, :amount)
+    params.require(:transaction).permit(:description, :amount, :festival_id)
   end
 end
