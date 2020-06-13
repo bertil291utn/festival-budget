@@ -1,2 +1,12 @@
-<h1>Festivals#index</h1>
-<p>Find me in app/views/festivals/index.html.erb</p>
+<article class="timeline">
+  <ul class="posts">
+    <%@festivals.each do |f|%>
+      <li>
+        <%= image_tag f.image, class:'w-50'%>
+        <p><%=f.name%></p>
+        <p class="group-created">Created at <%= f.created_at.strftime("%d %b %Y") %> by <%#=f.username%></p>
+      </li>
+    <%end%>
+  </ul>
+</article>
+<%#= render 'fab_button' %>
