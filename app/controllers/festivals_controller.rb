@@ -1,6 +1,6 @@
 class FestivalsController < ApplicationController
   def index
-    @festivals = Festival.ordered
+    @festivals = Festival.with_username.ordered
   end
 
   def new
@@ -22,6 +22,6 @@ class FestivalsController < ApplicationController
   private
 
   def festival_params
-    params.require(:festival).permit(:name, :budget, :image)
+    params.require(:festival).permit(:name, :budget, :imageok)
   end
 end

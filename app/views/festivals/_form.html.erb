@@ -1,4 +1,4 @@
-<%= form_with(model: festival) do |form| %>
+<%= form_with(model: festival, html: {multipart: true}) do |form| %>
   <% if festival.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(festival.errors.count, "error") %> prohibited this festival from being saved:</h2>
@@ -15,8 +15,9 @@
   <div class="form-group">
     <%= form.number_field :budget,step: "0.01", class: 'form-control',placeholder: 'Budget $0.00' %>
   </div>
-  <div class="form-group">
-    <%= form.text_field :image, class: 'form-control',placeholder: 'Image' %>
+  <div class="custom-file">
+    <%= form.file_field :imageok,class: 'custom-file-input' %>
+    <%= form.label :imageok, "Attach an Image", class: 'custom-file-label' %>
   </div>
   <div class="row pt-4">
     <div class='col'>

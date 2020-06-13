@@ -10,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_08_171858) do
+ActiveRecord::Schema.define(version: 2020_06_13_193903) do
 
   create_table "festivals", force: :cascade do |t|
     t.string "name"
     t.decimal "budget"
-    t.string "image"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "imageok_file_name"
+    t.string "imageok_content_type"
+    t.integer "imageok_file_size"
+    t.datetime "imageok_updated_at"
     t.index ["user_id"], name: "index_festivals_on_user_id"
   end
 

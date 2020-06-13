@@ -3,10 +3,10 @@
   <ul class="posts">
     <%@transactions.each do |t|%>
       <li>
-        <%= image_tag t.image_festival, class:'w-50'%>
+        <%= image_tag t.festival.imageok.url,class:'w-50' %>
         <p><%=t.description%></p>
         <p><%=number_to_currency(t.amount)%></p>
-        <p><%=t.name_festival%></p>
+        <p><%=t.festival.name%></p>
       </li>
     <%end%>
   </ul>
