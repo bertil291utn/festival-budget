@@ -11,7 +11,9 @@
   <body>
     <% if current_user %>
       <nav class="navbar navbar-expand-md bg-primary nav">
-        <a class="navbar-brand" href="/">Budget Fest</a>
+        <%unless current_page?('/')%>
+          <a class="navbar-brand" href="/"><i class="fa fa-arrow-left"></i></a>
+        <%end%>
         <span class="navbar-text">
           Logged in as <strong><%= current_user.fullname %></strong>
         </span>

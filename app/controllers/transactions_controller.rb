@@ -20,6 +20,11 @@ class TransactionsController < ApplicationController
     redirect_to transactions_path, notice: 'Thanks for feeding the piglet'
   end
 
+  def no_festival
+    @transactions = User.find(current_user.id).transactions.without_festival
+    @total = @transactions.sum(:amount)
+  end
+
   private
 
   def transaction_params
