@@ -4,7 +4,7 @@
       <li>
         <%= image_tag f.image, class:'w-50'%>
         <p><%=f.name%></p>
-        <p class="group-created">Created at <%= f.created_at.strftime("%d %b %Y") %> by <%#=f.username%></p>
+        <p class="group-created">Created at <%= f.created_at.strftime("%d %b %Y") %> by <%=f.username%></p>
       </li>
     <%end%>
   </ul>

@@ -1,6 +1,6 @@
 class FestivalsController < ApplicationController
   def index
-    @festivals = Festival.all
+    @festivals = Festival.ordered
   end
 
   def new

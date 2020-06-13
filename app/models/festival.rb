@@ -6,6 +6,6 @@ class Festival < ApplicationRecord
   validates :name, length: { minimum: 7 }
   validates :budget, format: { with: /\A\d{1,6}(\.\d{0,2})?\z/ }, numericality: { greater_than: 100 }
 
-  default_scope { order(name: :asc) }
-  # scope :with_user, -> { joins(:fest_creator).select('festivals.*, username') }
+  default_scope { joins(:fest_creator).select('festivals.*, username') }
+  scope :ordered, -> { order(name: :asc) }
 end
