@@ -1,2 +1,26 @@
-<h1>Festivals#create</h1>
-<p>Find me in app/views/festivals/create.html.erb</p>
+<%= form_with(model: festival) do |form| %>
+  <% if festival.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(festival.errors.count, "error") %> prohibited this festival from being saved:</h2>
+      <ul>
+        <% festival.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= form.text_field :name, class: 'form-control',placeholder: 'Name' %>
+  </div>
+  <div class="form-group">
+    <%= form.number_field :budget,step: "0.01", class: 'form-control',placeholder: 'Budget $0.00' %>
+  </div>
+  <div class="form-group">
+    <%= form.text_field :image, class: 'form-control',placeholder: 'Image' %>
+  </div>
+  <div class="row pt-4">
+    <div class='col'>
+      <%= form.submit 'save', class: 'btn btn-secondary w-100' %>
+    </div>
+  </div>
+<% end %>
