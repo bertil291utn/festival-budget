@@ -2,9 +2,7 @@
   <ul class="posts">
     <%@festivals.each do |f|%>
       <li>
-        <%if f.imageok.exists?%>
-          <%= image_tag f.imageok.url,class:'w-50' %>
-        <%end%>
+        <%= image_tag f.imageok.url,class:'w-50' %>
         <p><%=f.name%></p>
         <p class="group-created">Created at <%= f.created_at.strftime("%d %b %Y") %> by <%=f.username%></p>
       </li>
