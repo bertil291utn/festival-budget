@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'festivals' %>
 <%= form_with(model: festival, html: {multipart: true}) do |form| %>
   <% if festival.errors.any? %>
     <div id="error_explanation">
@@ -9,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+  <div id="imagen" class="d-none">
+    <br>
+    <img id="img-upload" alt="preview" class="w-50 d-block mx-auto ">
+    <br>
+  </div>
   <div class="form-group">
     <%= form.text_field :name, class: 'form-control',placeholder: 'Name' %>
   </div>
@@ -16,7 +22,7 @@
     <%= form.number_field :budget,step: "0.01", class: 'form-control',placeholder: 'Budget $0.00' %>
   </div>
   <div class="custom-file">
-    <%= form.file_field :imageok,class: 'custom-file-input' %>
+    <%= form.file_field :imageok,class: 'custom-file-input',onChange: 'preview()' %>
     <%= form.label :imageok, "Attach an Image", class: 'custom-file-label' %>
   </div>
   <div class="row pt-4">

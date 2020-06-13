@@ -5,7 +5,7 @@ class Festival < ApplicationRecord
 
   validates_attachment_content_type :imageok, content_type: ['image/jpg', 'image/jpeg', 'image/png']
 
-  validates :name, :budget, presence: true
+  validates :name, :budget, :imageok, presence: true
   validates :name, length: { minimum: 7 }
   validates :budget, format: { with: /\A\d{1,6}(\.\d{0,2})?\z/ }, numericality: { greater_than: 100 }
 

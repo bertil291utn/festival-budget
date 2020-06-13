@@ -1,3 +1,5 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+function preview() {
+  var result = URL.createObjectURL(event.target.files[0]);
+  $('#img-upload').attr('src', result);
+  $('#imagen').removeClass('d-none');
+}
