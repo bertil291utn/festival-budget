@@ -1,0 +1,12 @@
+<article class="timeline">
+  <p> <%= number_to_currency(@lefting)%> to go to the <%=@festival.name%> </p>
+  <%= image_tag @festival.imageok.url,class:'w-50' %>
+  <ul class="posts">
+    <%@fest_transactions.each do |t|%>
+      <li>
+        <p><%=t.description%></p>
+        <p><%=t.author_transaction.fullname%> saved <%=number_to_currency(t.amount)%></p>
+      </li>
+    <%end%>
+  </ul>
+</article>

@@ -19,6 +19,12 @@ class FestivalsController < ApplicationController
     redirect_to festivals_path, notice: 'New festival has been added'
   end
 
+  def show
+    @festival = Festival.find(params[:id])
+    @fest_transactions = @festival.transactions.author_transaction
+    @lefting = @festival.budget - @fest_transactions.sum(:amount)
+  end
+
   private
 
   def festival_params

@@ -9,4 +9,5 @@ class Transaction < ApplicationRecord
   scope :ordered, -> { order(created_at: :desc) }
   scope :with_festival, -> { where.not(festival_id: nil).includes(:festival).ordered }
   scope :without_festival, -> { where(festival_id: nil).ordered }
+  scope :author_transaction, -> { includes(:author_transaction) }
 end
