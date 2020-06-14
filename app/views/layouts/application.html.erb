@@ -9,16 +9,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <% if current_user %>
+    <% if current_user && !current_page?(root_path) %>
       <nav class="navbar navbar-expand-md bg-primary nav">
-        <%if current_page?('/')%>
-          <span class="navbar-toggler-icon">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-          </span>
-        <%else%>
-          <%current_path=current_path('festivals','show')%>
-          <a class="navbar-brand" href="<%=current_path ? '/festivals' : '/'%>"><i class="fa fa-arrow-left"></i></a>
-        <%end%>
+        <%current_page=current_page('festivals','show')%>
+        <%= link_to current_page ? festivals_path : root_path,class: 'navbar-brand' do %>
+          <i class="fa <%=current_page ? 'fa-arrow-left' : 'fa-bars'%>"></i>
+        <% end %>
       </nav>
     <% end %>
     <% if notice %>
@@ -27,7 +23,7 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <div class="<%='container' unless current_page?('/')%> h-100">
+    <div class="<%='container' unless current_page?(root_path)%> h-100">
       <%= yield %>
     </div>
   </body>

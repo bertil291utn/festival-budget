@@ -1,8 +1,8 @@
 class TransactionsController < ApplicationController
-  @@current_path = ''
+  @@current_page = ''
 
   def index
-    @@current_path = 'festival'
+    @@current_page = 'festival'
     @transactions = User.find(current_user.id).transactions.with_festival
   end
 
@@ -19,7 +19,7 @@ class TransactionsController < ApplicationController
     @transaction = user.transactions.build(transaction_params)
     return render :new unless @transaction.save
 
-    redirect_to @@current_path.eql?('festival') ? transactions_path : no_festival_path, notice: 'Thanks for feeding the piglet'
+    redirect_to @@current_page.eql?('festival') ? transactions_path : no_festival_path, notice: 'Thanks for feeding the piglet'
   end
 
   def no_festival
