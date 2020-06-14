@@ -12,7 +12,11 @@
     <% if current_user %>
       <nav class="navbar navbar-expand-md bg-primary nav">
         <%unless current_page?('/')%>
-          <a class="navbar-brand" href="/"><i class="fa fa-arrow-left"></i></a>
+          <%if params[:controller] == 'festivals' && params[:action] == 'show'%>
+            <a class="navbar-brand" href="/festivals"><i class="fa fa-arrow-left"></i></a>
+          <%else%>
+            <a class="navbar-brand" href="/"><i class="fa fa-arrow-left"></i></a>
+          <%end%>
         <%end%>
         <span class="navbar-text">
           Logged in as <strong><%= current_user.fullname %></strong>
