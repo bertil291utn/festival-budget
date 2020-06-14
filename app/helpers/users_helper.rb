@@ -1,5 +1,5 @@
 module UsersHelper
   def default_image
-    'https://png2.cleanpng.com/sh/8cc6dedaefd6c742ae49996726591f0f/L0KzQYm4UcI2N6t6e5H0aYP2gLBuTfNwdaF6jNd7LXnmf7B6TgV0baMyi9VqbHHlfLa0lvVkfJD3Rdl7YYDrebT6TfNtcaEyjeVucj31dbjwkCRzaaVuh9C2aXPyfn7pif5oNZpyedlucz24crfog8Y6OpVreqoCNT65SYaBVsgyOmI6TKU6NkG3SYGCUcY1NqFzf3==/kisspng-computer-icons-user-scalable-vector-graphics-clip-user-registration-icon-bing-images-5bfac692dfb875.6958681215431614909164.png'
+    'https://res.cloudinary.com/hdpoyu0ip/image/upload/v1578680169/appboleto_adicional/null_profile.png'
   end
 end
