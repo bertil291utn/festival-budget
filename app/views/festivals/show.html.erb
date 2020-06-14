@@ -1,6 +1,17 @@
 <article class="timeline">
-  <p> This is the goal <%= number_to_currency(@festival.budget)%> to get <%=@festival.name%> </p>
+  <h3><%=@festival.name%></h3>
   <%= image_tag @festival.imageok.url,class:'w-50' %>
+  <%budget_incoming_percent=budget_incoming_percent(@festival.budget, sum(@fest_transactions))%>
+  <div class="container">
+    <h4><%= number_to_currency(sum(@fest_transactions))%></h4>
+    <p>Saved</p>
+    <div class="progress">
+      <div class="progress-bar <%=setear_bar_color(budget_incoming_percent)%>" role="progressbar" aria-valuenow="<%=budget_incoming_percent%>" aria-valuemin="0" aria-valuemax="100" style="width:<%=budget_incoming_percent%>%">
+        <%=budget_incoming_percent%>%
+      </div>
+    </div>
+    <p> <strong>Goal:</strong> <%= number_to_currency(@festival.budget)%> </p>
+  </div>
   <ul class="posts">
     <%@fest_transactions.each do |t|%>
       <li>
