@@ -27,7 +27,7 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <div class="container h-100">
+    <div class="<%='container' unless current_page?('/')%> h-100">
       <%= yield %>
     </div>
   </body>

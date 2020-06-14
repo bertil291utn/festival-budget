@@ -1,4 +1,4 @@
-<div class="user-profile text-center mt-5">
+<div class="user-profile text-center p-5">
   <%if @user.image.exists?%>
     <div class="image-cropper mx-auto my-3">
       <%= image_tag @user.image.url,class:'profile-pic' %>

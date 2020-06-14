@@ -1,3 +1,13 @@
+.user-profile {
+  background: rgb(19, 52, 95);
+  background: linear-gradient(
+    180deg,
+    rgba(19, 52, 95, 1) 0%,
+    rgba(29, 81, 131, 1) 50%,
+    rgba(47, 129, 189, 1) 88%
+  );
+}
+
 .image-cropper {
   width: 100px;
   height: 100px;
