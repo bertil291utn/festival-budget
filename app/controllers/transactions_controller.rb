@@ -1,7 +1,6 @@
 class TransactionsController < ApplicationController
   def index
     @transactions = User.find(current_user.id).transactions.with_festival
-    @total = @transactions.sum(:amount)
   end
 
   def new
@@ -22,7 +21,6 @@ class TransactionsController < ApplicationController
 
   def no_festival
     @transactions = User.find(current_user.id).transactions.without_festival
-    @total = @transactions.sum(:amount)
   end
 
   private

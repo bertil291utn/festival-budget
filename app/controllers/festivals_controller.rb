@@ -22,7 +22,6 @@ class FestivalsController < ApplicationController
   def show
     @festival = Festival.find(params[:id])
     @fest_transactions = @festival.transactions.author_transaction
-    @lefting = @festival.budget - @fest_transactions.sum(:amount)
   end
 
   private

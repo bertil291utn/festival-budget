@@ -1,5 +1,5 @@
 <article class="timeline">
-  <p> You have extra savings: <%= number_to_currency(@total)%> </p>
+  <p> You have extra savings: <%= number_to_currency(sum(@transactions))%> </p>
   <ul class="posts">
     <%@transactions.each do |t|%>
       <li>

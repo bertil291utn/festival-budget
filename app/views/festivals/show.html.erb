@@ -1,5 +1,5 @@
 <article class="timeline">
-  <p> <%= number_to_currency(@lefting)%> to go to the <%=@festival.name%> </p>
+  <p> This is the goal <%= number_to_currency(@festival.budget)%> to get <%=@festival.name%> </p>
   <%= image_tag @festival.imageok.url,class:'w-50' %>
   <ul class="posts">
     <%@fest_transactions.each do |t|%>
