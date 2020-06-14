@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by_username(params[:username])
     if user
       log_in user
-      redirect_to root_url, notice: 'Logged in!'
+      redirect_to root_url, notice: "Welcome #{user.fullname}"
     else
       redirect_to login_url, alert: 'Username is invalid'
     end

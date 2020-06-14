@@ -1,4 +1,5 @@
-<%= form_with(model: user, local: true) do |form| %>
+<%= javascript_include_tag 'festivals' %>
+<%= form_with(model: user, html: {multipart: true},local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -9,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+  <div id="imagen" class="d-none">
+    <br>
+    <img id="img-upload" alt="preview" class="w-50 d-block mx-auto ">
+    <br>
+  </div>
   <div class="form-group">
     <%= form.text_field :fullname, class: 'form-control',placeholder: 'Fullname' %>
   </div>
@@ -17,6 +23,10 @@
   </div>
   <div class="form-group">
     <%= form.email_field :email, class: 'form-control',placeholder: 'E-mail' %>
+  </div>
+  <div class="custom-file">
+    <%= form.file_field :image,class: 'custom-file-input',onChange: 'preview()' %>
+    <%= form.label :image, "Attach an Image", class: 'custom-file-label' %>
   </div>
   <div class="row pt-4">
     <div class='col'>
