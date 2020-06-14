@@ -16,23 +16,57 @@
     color: $texto-light;
     text-decoration: none;
   }
-  
+
   a:focus {
     box-shadow: none;
   }
-}
 
-.image-cropper {
-  width: 100px;
-  height: 100px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 50%;
-}
-.profile-pic {
-  display: inline;
-  margin: 0 auto;
-  margin-left: -25%; //centers the image
-  height: 100%;
-  width: auto;
+  .image-cropper {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .profile-pic {
+    display: inline;
+    margin-left: -20%;
+    height: 100%;
+    width: auto;
+  }
+
+  .list-link {
+    .btn {
+      padding: 0;
+    }
+
+    a {
+      text-align: left;
+      border-bottom: 0.05rem solid $texto-light;
+    }
+
+    .list-link-item {
+      text-align: left;
+      display: flex;
+      max-width: 425px;
+      margin: 0 auto;
+      min-width: 280px;
+      
+      a {
+        padding-bottom: 20px;
+      }
+    }
+
+    .rounded-icon {
+      $tam_icon_rounded: 40px;
+      border: 2px solid $texto-light;
+      display: inline-block;
+      border-radius: $tam_icon_rounded;
+      width: 46px;
+      height: $tam_icon_rounded;
+      text-align: center;
+      padding-top: 1px;
+      margin-right: 20px;
+    }
+  }
 }
