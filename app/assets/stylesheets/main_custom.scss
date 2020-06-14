@@ -41,7 +41,11 @@ form,
     color: $texto-tertiary;
   }
   a.btn-link:hover {
+    color: $texto-tertiary;
     text-decoration: none;
+  }
+  a.btn-link:focus {
+    box-shadow: none;
   }
 
   #error_explanation {
@@ -88,14 +92,6 @@ form,
       }
     }
   }
-}
-
-.nav a {
-  color: $texto-light;
-}
-
-.nav a:hover {
-  color: $texto-light;
 }
 
 .navbar-brand,
