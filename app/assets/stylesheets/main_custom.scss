@@ -92,16 +92,20 @@ form,
 
 .nav a {
   color: $texto-light;
-  text-transform: uppercase;
-  font-weight: 900;
 }
 
 .nav a:hover {
-  color: #fff;
+  color: $texto-light;
 }
 
-.navbar-brand {
+.navbar-brand,
+.navbar-toggler-icon {
   i {
     font-size: 1.7rem;
+    color: $texto-light;
   }
+}
+
+.navbar-toggler-icon {
+  margin: 3px;
 }

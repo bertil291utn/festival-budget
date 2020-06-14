@@ -11,35 +11,34 @@
   <body>
     <% if current_user %>
       <nav class="navbar navbar-expand-md bg-primary nav">
-        <%unless current_page?('/')%>
+        <%if current_page?('/')%>
+          <span class="navbar-toggler-icon">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </span>
+        <%else%>
           <%if params[:controller] == 'festivals' && params[:action] == 'show'%>
             <a class="navbar-brand" href="/festivals"><i class="fa fa-arrow-left"></i></a>
           <%else%>
             <a class="navbar-brand" href="/"><i class="fa fa-arrow-left"></i></a>
           <%end%>
         <%end%>
-        <span class="navbar-text">
-          Logged in as <strong><%= current_user.fullname %></strong>
+        <span class="navbar-text d-block mx-auto">
+          <%# <a href="/">Logged in as <strong> %>
+          <%#= current_user.fullname %>
+          <%# </strong></a> %>
         </span>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse float-right" id="collapsibleNavbar">
+        <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+          </span>
+        </button> %>
+        <%# <div class="navbar-collapse collapse float-right" id="collapsibleNavbar">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <%#= link_to 'All events', root_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%#= link_to 'My events', user_path(session[:user_id]), class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%#= link_to 'My attending events', attended_events_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item">
-              <%= link_to 'Log Out', logout_path, class: 'nav-link' %>
-            </li>
+            <li class="nav-item"> %>
+        <%#= link_to 'Log Out', logout_path, class: 'nav-link' %>
+        <%# </li>
           </ul>
-        </div>
+        </div> %>
       </nav>
     <% end %>
     <% if notice %>
