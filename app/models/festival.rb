@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-class Festival < ApplicationRecord
+class Festival < ApplicationRecord # :nodoc:
   belongs_to :fest_creator, class_name: :User, foreign_key: :user_id
   has_many :transactions, dependent: :destroy
   has_attached_file :imageok, styles: { medium: '300x300>', thumb: '100x100>' }

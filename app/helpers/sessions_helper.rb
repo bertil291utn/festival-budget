@@ -1,8 +1,8 @@
-module SessionsHelper
+module SessionsHelper # :nodoc:
   def sign_in?
     return true unless current_user.nil?
 
-    return false
+    false
   end
 
   def log_out

@@ -1,4 +1,4 @@
-class Transaction < ApplicationRecord
+class Transaction < ApplicationRecord # :nodoc:
   belongs_to :author_transaction, class_name: :User, foreign_key: :user_id
   belongs_to :festival, optional: true
 

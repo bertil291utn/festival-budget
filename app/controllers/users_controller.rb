@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < ApplicationController # :nodoc:
   skip_before_action :require_login, only: %i[new create]
 
   def index

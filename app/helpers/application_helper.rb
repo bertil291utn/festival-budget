@@ -1,10 +1,7 @@
-# frozen_string_literal: true
-
-module ApplicationHelper
+# rubocop:disable Layout/LineLength
+module ApplicationHelper # :nodoc:
   def current_page(controlador, actionable = nil)
-    params[:controller] == controlador && (unless actionable.nil?
-                                             params[:action] == actionable
-                                           end)
+    params[:controller] == controlador && (params[:action] == actionable unless actionable.nil?)
   end
 
   def title_navbar
@@ -44,10 +41,9 @@ module ApplicationHelper
   end
 
   def no_show_nav_bar
-    if current_page('sessions', 'index') || current_page('users', 'index')
-      return true
-    end
+    return true if current_page('sessions', 'index') || current_page('users', 'index')
 
     false
   end
 end
+# rubocop:enable Layout/LineLength

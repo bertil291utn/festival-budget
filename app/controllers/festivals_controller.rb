@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-class FestivalsController < ApplicationController
+class FestivalsController < ApplicationController # :nodoc:
   def index
     @festivals = Festival.with_username.ordered
   end

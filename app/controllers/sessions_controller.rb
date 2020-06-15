@@ -1,7 +1,8 @@
-class SessionsController < ApplicationController
+class SessionsController < ApplicationController # :nodoc:
   skip_before_action :require_login, only: %i[new create index]
 
   def index; end
+
   def new; end
 
   def create

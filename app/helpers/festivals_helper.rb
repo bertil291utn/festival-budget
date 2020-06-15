@@ -1,4 +1,4 @@
-module FestivalsHelper
+module FestivalsHelper # :nodoc:
   def left_amount(budget, array_elem)
     budget - sum(array_elem)
   end

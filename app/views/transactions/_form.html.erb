@@ -17,7 +17,7 @@
     <%= form.number_field :amount,step: "0.01", class: 'form-control',placeholder: '$0.00' %>
   </div>
   <div class="form-group">
-    <%= form.select :festival_id, options_from_collection_for_select(Festival.all, :id, :name),{include_blank: 'Select your festival'}, class: 'form-control' %>
+    <%= form.select :festival_id, options_from_collection_for_select(Festival.all.ordered, :id, :name),{include_blank: 'Select your festival'}, class: 'form-control' %>
   </div>
   <div class="row pt-4">
     <div class='col'>

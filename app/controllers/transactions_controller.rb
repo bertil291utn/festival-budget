@@ -1,6 +1,6 @@
-# frozen_string_literal: true
-
-class TransactionsController < ApplicationController
+# rubocop:disable Style/ClassVars
+# rubocop:disable Layout/LineLength
+class TransactionsController < ApplicationController # :nodoc:
   def index
     @@current_path = 'festival'
     @transactions = User.find(current_user.id).transactions.with_festival
@@ -33,3 +33,5 @@ class TransactionsController < ApplicationController
     params.require(:transaction).permit(:description, :amount, :festival_id)
   end
 end
+# rubocop:enable Style/ClassVars
+# rubocop:enable Layout/LineLength
