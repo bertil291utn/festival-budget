@@ -5,13 +5,13 @@
   height: 30px;
 }
 
-.card {
-  color: $texto-primary;
-  min-height: 445px;
-}
-.timeline {
+.festivals {
   a:hover {
     color: unset;
     text-decoration: none;
+  }
+  .card {
+    color: $texto-primary;
+    min-height: 445px;
   }
 }
