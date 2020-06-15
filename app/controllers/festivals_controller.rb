@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FestivalsController < ApplicationController
   def index
     @festivals = Festival.with_username.ordered
@@ -21,7 +23,7 @@ class FestivalsController < ApplicationController
 
   def show
     @festival = Festival.find(params[:id])
-    @fest_transactions = @festival.transactions.author_transaction
+    @fest_transactions = @festival.transactions.author_transaction.ordered
   end
 
   private

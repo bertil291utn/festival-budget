@@ -111,3 +111,18 @@ form,
 .navbar-toggler-icon {
   margin: 3px;
 }
+
+.image-cropper {
+  $tam_image: 80px;
+  width: $tam_image;
+  height: $tam_image;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profile-pic {
+  display: inline;
+  margin-left: -20%;
+  height: 100%;
+  width: auto;
+}

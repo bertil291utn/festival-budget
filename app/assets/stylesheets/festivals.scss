@@ -1,9 +1,6 @@
 // Place all the styles related to the Festivals controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.progress {
-  height: 30px;
-}
 
 .festivals {
   a:hover {
@@ -13,5 +10,15 @@
   .card {
     color: $texto-primary;
     min-height: 445px;
+  }
+}
+.festival_show {
+  .progress {
+    height: 30px;
+  }
+  .savings {
+    img {
+      height: 80px;
+    }
   }
 }
