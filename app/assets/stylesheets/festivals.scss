@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .festivals {
+  .default_image {
+    width: 150px;
+  }
   a:hover {
     color: unset;
     text-decoration: none;
@@ -20,5 +23,9 @@
     img {
       height: 80px;
     }
+  }
+
+  .default_image {
+    width: 200px;
   }
 }

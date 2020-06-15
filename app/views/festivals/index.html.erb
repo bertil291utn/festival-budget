@@ -5,7 +5,11 @@
         <div class="col">
           <%= link_to festival_path(f) do %>
             <div class="card shadow-sm mb-5">
-              <%= image_tag f.imageok.exists? ? f.imageok.url : default_image,class:'card-img-top w-100' %>
+              <%if f.imageok.exists?%>
+                <%= image_tag f.imageok.url ,class:'card-img-top w-100' %>
+              <% else %>
+                <%= image_tag default_image,class:'default_image mx-auto mt-4' %>
+              <%end%>
               <div class="card-body">
                 <h5 class="card-title"><%=f.name%></h5>
                 <p class="card-text"><small class="text-muted card-date"><%= f.created_at.strftime("%d %b %Y") %> by <%=f.fullname%></small></p>

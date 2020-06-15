@@ -1,7 +1,11 @@
 <div class="container bg-light mt-5 shadow-sm">
   <article class="festival_show">
     <div class="py-5 text-center">
-      <%= image_tag @festival.imageok.url,class:'d-block mx-auto mb-4 w-50 shadow-lg rounded-lg' %>
+      <%if @festival.imageok.exists?%>
+        <%= image_tag @festival.imageok.url,class:'d-block mx-auto mb-4 w-50 shadow-lg rounded-lg' %>
+      <% else %>
+        <%= image_tag default_image,class:'default_image mx-auto' %>
+      <%end%>
       <h3><%=@festival.name%></h3>
     </div>
     <%budget_incoming_percent=budget_incoming_percent(@festival.budget, sum(@fest_transactions))%>
