@@ -1,10 +1,10 @@
-<div class="user-profile text-center p-5 h-100">
+<div class="user-profile text-center p-5">
   <%if @user.image.exists?%>
     <div class="image-cropper mx-auto my-3">
       <%= image_tag @user.image.url,class:'profile-pic' %>
     </div>
   <% else %>
-    <%= image_tag default_image,class:'h-25 my-3' %>
+    <%= image_tag default_image,class:'default_image my-3' %>
   <%end%>
   <p><%=@user.fullname%></p>
   <div class="list-link mt-5">
