@@ -1,16 +1,20 @@
-<article class="timeline">
-  <ul class="posts">
-    <%@festivals.each do |f|%>
-      <li>
-        <%= link_to festival_path(f) do %>
-          <%if f.imageok.exists?%>
-            <%= image_tag f.imageok.url,class:'w-50' %>
-          <%end%>
-          <p><%=f.name%></p>
-          <p class="group-created">Created at <%= f.created_at.strftime("%d %b %Y") %> by <%=f.username%></p>
-        <%end%>
-      </li>
-    <%end%>
-  </ul>
-</article>
+<div class="container">
+  <article class="timeline">
+    <div class="row row-cols-3 mt-5">
+      <%@festivals.each do |f|%>
+        <div class="col">
+          <%= link_to festival_path(f) do %>
+            <div class="card shadow-sm">
+              <%= image_tag f.imageok.exists? ? f.imageok.url : default_image,class:'card-img-top w-100' %>
+              <div class="card-body">
+                <h5 class="card-title"><%=f.name%></h5>
+                <p class="card-text"><small class="text-muted card-date">Created at <%= f.created_at.strftime("%d %b %Y") %> by <%=f.username%></small></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <%end%>
+    </div>
+  </article>
+</div>
 <%= render 'fab_button' %>
