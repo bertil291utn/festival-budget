@@ -16,6 +16,12 @@
     <br>
   </div>
   <div class="form-group">
+    <div class="custom-file ">
+      <%= form.file_field :image,class: 'custom-file-input',onChange: 'preview()' %>
+      <%= form.label :image, "Upload picture", class: 'custom-file-label' %>
+    </div>
+  </div>
+  <div class="form-group">
     <%= form.text_field :fullname, class: 'form-control',placeholder: 'Fullname' %>
   </div>
   <div class="form-group">
@@ -23,10 +29,6 @@
   </div>
   <div class="form-group">
     <%= form.email_field :email, class: 'form-control',placeholder: 'E-mail' %>
-  </div>
-  <div class="custom-file">
-    <%= form.file_field :image,class: 'custom-file-input',onChange: 'preview()' %>
-    <%= form.label :image, "Attach an Image", class: 'custom-file-label' %>
   </div>
   <div class="row pt-4">
     <div class='col'>

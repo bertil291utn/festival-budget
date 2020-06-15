@@ -8,7 +8,7 @@
               <%= image_tag f.imageok.exists? ? f.imageok.url : default_image,class:'card-img-top w-100' %>
               <div class="card-body">
                 <h5 class="card-title"><%=f.name%></h5>
-                <p class="card-text"><small class="text-muted card-date"><%= f.created_at.strftime("%d %b %Y") %> by <%=f.username%></small></p>
+                <p class="card-text"><small class="text-muted card-date"><%= f.created_at.strftime("%d %b %Y") %> by <%=f.fullname%></small></p>
               </div>
             </div>
           <% end %>
