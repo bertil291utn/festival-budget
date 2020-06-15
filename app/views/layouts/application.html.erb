@@ -9,12 +9,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <% if current_user && !current_page?(root_path) %>
-      <nav class="navbar navbar-expand-md bg-primary nav">
+    <% unless no_show_nav_bar %>
+      <nav class="navbar bg-primary nav">
         <%current_page=current_page('festivals','show')%>
-        <%= link_to current_page ? festivals_path : root_path,class: 'navbar-brand' do %>
-          <i class="fa <%=current_page ? 'fa-arrow-left' : 'fa-bars'%>"></i>
+        <%= link_to redirect_to_action,class: 'navbar-brand' do %>
+          <i class="fa <%=show_icon%>"></i>
         <% end %>
+        <span class="text-center"><%= title_navbar %></span>
       </nav>
     <% end %>
     <% if notice %>

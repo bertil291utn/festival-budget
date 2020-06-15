@@ -1,5 +1,7 @@
 <article class="timeline">
-  <p> Your &#128055; weights: <%= number_to_currency(sum(@transactions))%> </p>
+  <div class="pig-weigths">
+    <p> Your &#128055; weights: <%= number_to_currency(sum(@transactions))%> </p>
+  </div>
   <ul class="posts">
     <%@transactions.each do |t|%>
       <li>
@@ -7,6 +9,7 @@
         <p><%=t.description%></p>
         <p><%=number_to_currency(t.amount)%></p>
         <p><%=t.festival.name%></p>
+        <p><%= t.created_at.strftime("%d %b %Y")%></p>
       </li>
     <%end%>
   </ul>
