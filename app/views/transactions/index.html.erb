@@ -1,17 +1,29 @@
 <article class="timeline">
-  <div class="pig-weigths">
-    <p> Your &#128055; weights: <%= number_to_currency(sum(@transactions))%> </p>
+  <div class="pig-weigths bg-light shadow-sm">
+    <p> Savings amount</p>
+    <p class="font-bold"><%= number_to_currency(sum(@transactions))%> </p>
   </div>
-  <ul class="posts">
+  <div class="container">
     <%@transactions.each do |t|%>
-      <li>
-        <%= image_tag t.festival.imageok.url,class:'w-50' %>
-        <p><%=t.description%></p>
-        <p><%=number_to_currency(t.amount)%></p>
-        <p><%=t.festival.name%></p>
-        <p><%= t.created_at.strftime("%d %b %Y")%></p>
-      </li>
+      <div class="card shadow-sm my-4">
+        <div class="row no-gutters">
+          <div class="col-5 p-4">
+            <%= image_tag t.festival.imageok.url,class:'card-img w-100' %>
+          </div>
+          <div class="col-sm-7">
+            <div class="card-body mt-4">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title"><%=t.description%></h5>
+                <h6 class="font-bold"><%=number_to_currency(t.amount)%></h6>
+              </div>
+              <p class="card-text"><%=t.festival.name%> </p>
+              <hr>
+              <p class="card-date"><%= t.created_at.strftime("%d %b %Y")%></p>
+            </div>
+          </div>
+        </div>
+      </div>
     <%end%>
-  </ul>
+  </div>
 </article>
-<%= render 'fab_button' %>
+<%= render 'fab_button' %></div>
