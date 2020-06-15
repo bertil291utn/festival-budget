@@ -6,19 +6,23 @@
   .default_image {
     width: 150px;
   }
+
   a:hover {
     color: unset;
     text-decoration: none;
   }
+
   .card {
     color: $texto-primary;
     min-height: 445px;
   }
 }
+
 .festival_show {
   .progress {
     height: 30px;
   }
+
   .savings {
     img {
       height: 80px;

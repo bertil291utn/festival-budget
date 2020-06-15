@@ -5,17 +5,19 @@ $texto-last: #989da3;
 $texto-light: #faf9fa;
 
 @font-face {
-  font-family: 'proxima_novabold';
-  src: asset-url('proxima-nova-bold-webfont.woff2') format('woff2'),
-    asset-url('proxima-nova-bold-webfont.woff') format('woff');
+  font-family: "proxima_novabold";
+  src:
+    asset-url("proxima-nova-bold-webfont.woff2") format("woff2"),
+    asset-url("proxima-nova-bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'proxima_novalight';
-  src: asset-url('proxima-nova-light-webfont.woff2') format('woff2'),
-    asset-url('proxima-nova-light-webfont.woff') format('woff');
+  font-family: "proxima_novalight";
+  src:
+    asset-url("proxima-nova-light-webfont.woff2") format("woff2"),
+    asset-url("proxima-nova-light-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -26,33 +28,39 @@ body {
 }
 
 .font-bold {
-  font-family: 'proxima_novabold';
+  font-family: "proxima_novabold", sans-serif;
+}
+
+.btn-link {
+  color: $texto-tertiary;
+}
+
+.btn-link:focus {
+  box-shadow: none;
+}
+
+.btn-link:hover {
+  color: $texto-tertiary;
+  text-decoration: none;
 }
 
 form,
 .form {
-  input[type='submit'] {
+  input[type="submit"] {
     text-transform: uppercase;
   }
+
   a.btn {
     text-transform: uppercase;
-  }
-  a.btn-link {
-    color: $texto-tertiary;
-  }
-  a.btn-link:hover {
-    color: $texto-tertiary;
-    text-decoration: none;
-  }
-  a.btn-link:focus {
-    box-shadow: none;
   }
 
   #error_explanation {
     font-size: 16px;
+
     h2 {
       font-size: 1em;
     }
+
     ul {
       color: #f00;
     }
@@ -114,12 +122,14 @@ form,
 
 .image-cropper {
   $tam_image: 80px;
+
   width: $tam_image;
   height: $tam_image;
   position: relative;
   overflow: hidden;
   border-radius: 50%;
 }
+
 .profile-pic {
   display: inline;
   margin-left: -20%;

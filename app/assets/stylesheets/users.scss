@@ -1,11 +1,12 @@
 .user-profile {
   background: rgb(19, 52, 95);
-  background: linear-gradient(
-    180deg,
-    rgba(19, 52, 95, 1) 0%,
-    rgba(29, 81, 131, 1) 32%,
-    rgba(47, 129, 189, 1) 74%
-  );
+  background:
+    linear-gradient(
+      180deg,
+      rgba(19, 52, 95, 1) 0%,
+      rgba(29, 81, 131, 1) 32%,
+      rgba(47, 129, 189, 1) 74%
+    );
   color: $texto-light;
 
   a {
@@ -44,7 +45,9 @@
     }
 
     .rounded-icon {
+
       $tam_icon_rounded: 40px;
+
       border: 2px solid $texto-light;
       display: inline-block;
       border-radius: $tam_icon_rounded;
@@ -55,6 +58,7 @@
       margin-right: 20px;
     }
   }
+
   .image-cropper {
     width: 100px;
     height: 100px;
