@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
 
   def require_login
-    redirect_to main_path, alert: 'You must be logged in to access' unless sign_in?
+    redirect_to main_path unless sign_in?
   end
 end
