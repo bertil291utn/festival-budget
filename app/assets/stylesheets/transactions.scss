@@ -55,6 +55,15 @@
     margin: 0;
   }
 
+  a {
+    color: unset;
+  }
+
+  a:hover {
+    color: unset;
+    text-decoration: none;
+  }
+
   .card-title {
     margin-bottom: 0.3rem;
     font-size: 40px;

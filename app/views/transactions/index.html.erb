@@ -20,7 +20,9 @@
                 <h6 class="card-title"><%=t.description%></h6>
                 <h7 class="font-bold"><%=number_to_currency(t.amount)%></h7>
               </div>
-              <p class="card-text"><%=t.festival.name%> </p>
+              <%= link_to festival_path(t.festival) do %>
+                <p class="card-text"><%=t.festival.name%> </p>
+              <%end%>
               <hr>
               <p class="card-text"><small class="text-muted card-date"><%= t.created_at.strftime("%d %b %Y")%></small></p>
             </div>
