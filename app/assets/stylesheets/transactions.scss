@@ -27,11 +27,15 @@
 }
 
 .btn-group-fab .btn-main {
-  width: 70px;
-  height: 70px;
+  width: 150px;
+  height: 150px;
   right: 50%;
   margin-right: -25px;
   z-index: 9;
+
+  i {
+    font-size: 60px;
+  }
 }
 
 .pig-weights {
@@ -44,8 +48,27 @@
   padding: 20px;
 }
 
-.container {
-  .card-date {
-    font-size: 16px;
+.tarjetas {
+  font-size: 30px;
+
+  p {
+    margin: 0;
   }
+
+  .card-title {
+    margin-bottom: 0.3rem;
+    font-size: 40px;
+  }
+
+  .card-body {
+    padding: 0.5rem;
+  }
+
+  hr {
+    margin: 0.5rem 0;
+  }
+}
+
+.modal-dialog-centered {
+  max-width: 100%;
 }
