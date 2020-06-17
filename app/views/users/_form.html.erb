@@ -2,7 +2,6 @@
 <%= form_with(model: user, html: {multipart: true},local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
       <ul>
         <% user.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -30,7 +29,7 @@
   <div class="form-group">
     <%= form.email_field :email, class: 'form-control',placeholder: 'E-mail' %>
   </div>
-  <div class="row pt-4">
+  <div class="row">
     <div class='col'>
       <%= form.submit 'Sign up', class: 'btn btn-secondary w-100' %>
     </div>

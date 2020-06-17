@@ -1,13 +1,9 @@
 .user-profile {
+  height: 100%;
   background: rgb(19, 52, 95);
-  background:
-    linear-gradient(
-      180deg,
-      rgba(19, 52, 95, 1) 0%,
-      rgba(29, 81, 131, 1) 32%,
-      rgba(47, 129, 189, 1) 74%
-    );
+  background: linear-gradient(180deg, rgba(19, 52, 95, 1) 0%, rgba(29, 81, 131, 1) 32%, rgba(47, 129, 189, 1) 74%);
   color: $texto-light;
+  // overflow-y: hidden;
 
   a {
     color: $texto-light;
@@ -35,7 +31,6 @@
     .list-link-item {
       text-align: left;
       display: flex;
-      max-width: 425px;
       margin: 0 auto;
       min-width: 280px;
 
@@ -45,14 +40,11 @@
     }
 
     .rounded-icon {
-
-      $tam_icon_rounded: 40px;
-
       border: 2px solid $texto-light;
       display: inline-block;
-      border-radius: $tam_icon_rounded;
-      width: 46px;
-      height: $tam_icon_rounded;
+      border-radius: 50%;
+      width: 70px;
+      height: 65px;
       text-align: center;
       padding-top: 1px;
       margin-right: 20px;
@@ -60,8 +52,8 @@
   }
 
   .image-cropper {
-    width: 100px;
-    height: 100px;
+    width: 250px;
+    height: 250px;
   }
 
   .default_image {

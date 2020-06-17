@@ -9,7 +9,7 @@ module ApplicationHelper # :nodoc:
                'savings with festival'
              elsif current_page('transactions', 'no_festival')
                'savings no festival'
-             elsif current_page('users', 'new')
+             elsif current_page('users', 'new') || current_page?('/users')
                'register'
              elsif current_page('sessions', 'new')
                'login'

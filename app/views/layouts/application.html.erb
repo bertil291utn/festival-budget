@@ -14,19 +14,19 @@
       <nav class="navbar bg-primary nav">
         <%current_page=current_page('festivals','show')%>
         <%= link_to redirect_to_action,class: 'navbar-brand' do %>
-          <i class="fa <%=show_icon%>"></i>
+          <i class="fa <%=show_icon%> ml-2"></i>
         <% end %>
         <span class="text-center"><%= title_navbar %></span>
       </nav>
     <% end %>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+    <% if notice || alert%>
+      <p class="alert alert-<%=notice ? 'success' : 'danger'%>" id="alert-select-transaction"><%= notice ? notice : alert %></p>
+    <%end%>
     <div class="h-100">
       <%= yield %>
     </div>
+    <script>
+      setTimeout("$('#alert-select-transaction').fadeOut('slow')", 2000)
+    </script>
   </body>
 </html>
