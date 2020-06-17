@@ -1,43 +1,45 @@
-<div class="container bg-light mt-5 shadow-sm">
-  <article class="festival_show">
-    <div class="py-5 text-center">
-      <%if @festival.imageok.exists?%>
-        <%= image_tag @festival.imageok.url,class:'d-block mx-auto mb-4 w-50 shadow-lg rounded-lg' %>
-      <% else %>
-        <%= image_tag default_image,class:'default_image mx-auto' %>
-      <%end%>
-      <h3><%=@festival.name%></h3>
-    </div>
-    <%budget_incoming_percent=budget_incoming_percent(@festival.budget, sum(@fest_transactions))%>
-    <div class="container pb-1">
-      <h4 class="font-bold"><%= number_to_currency(sum(@fest_transactions))%></h4>
-      <p>Saved</p>
-      <div class="progress">
-        <div class="progress-bar <%=setear_bar_color(budget_incoming_percent)%>" role="progressbar" aria-valuenow="<%=budget_incoming_percent%>" aria-valuemin="0" aria-valuemax="100" style="width:<%=budget_incoming_percent%>%">
-          <%=budget_incoming_percent%>%
-        </div>
+<div class="p-3">
+  <div class="bg-light mt-5 shadow-sm">
+    <article class="festival_show">
+      <div class="text-center">
+        <%if @festival.imageok.exists?%>
+          <%= image_tag @festival.imageok.url,class:'d-block mx-auto w-100' %>
+        <% else %>
+          <%= image_tag default_image,class:'default_image mx-auto' %>
+        <%end%>
+        <h3 class="my-4"><%=@festival.name%></h3>
       </div>
-      <p> <strong>Goal:</strong> <%= number_to_currency(@festival.budget)%> </p>
-    </div>
-    <div class="savings my-3 p-3 rounded box-shadow">
-      <h6 class="border-bottom border-gray pb-2 mb-0">Contributors </h6>
-      <%@fest_transactions.each do |t|%>
-        <div class="media text-muted pt-3">
-          <%if t.author_transaction.image.exists?%>
-            <div class="image-cropper">
-              <%= image_tag t.author_transaction.image.url,class:'profile-pic' %>
-            </div>
-          <% else %>
-            <%= image_tag default_image %>
-          <%end%>
-          <p class="media-body pb-3 ml-4 small border-bottom border-gray">
-            <strong class="d-block text-gray-dark"><%=t.author_transaction.fullname%> saved <%=number_to_currency(t.amount)%></strong>
-            <%=t.description%>
-            <br>
-            <small class="text-muted card-date"><%= t.created_at.strftime("%d %b %Y")%></small>
-          </p>
+      <%budget_incoming_percent=budget_incoming_percent(@festival.budget, sum(@fest_transactions))%>
+      <div class="p-2">
+        <h4 class="font-bold"><%= number_to_currency(sum(@fest_transactions))%></h4>
+        <p>Saved</p>
+        <div class="progress">
+          <div class="progress-bar <%=setear_bar_color(budget_incoming_percent)%>" role="progressbar" aria-valuenow="<%=budget_incoming_percent%>" aria-valuemin="0" aria-valuemax="100" style="width:<%=budget_incoming_percent%>%">
+            <%=budget_incoming_percent%>%
+          </div>
         </div>
-      <% end %>
-    </div>
-  </article>
+        <p> <strong>Goal:</strong> <%= number_to_currency(@festival.budget)%> </p>
+      </div>
+      <div class="savings my-3 p-3 rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Contributors </h6>
+        <%@fest_transactions.each do |t|%>
+          <div class="media text-muted pt-3">
+            <%if t.author_transaction.image.exists?%>
+              <div class="image-cropper">
+                <%= image_tag t.author_transaction.image.url,class:'profile-pic' %>
+              </div>
+            <% else %>
+              <%= image_tag default_image %>
+            <%end%>
+            <p class="media-body pb-3 ml-4 small border-bottom border-gray">
+              <strong class="d-block text-gray-dark"><%=t.author_transaction.fullname%> saved <%=number_to_currency(t.amount)%></strong>
+              <%=t.description%>
+              <br>
+              <small class="text-muted card-date"><%= t.created_at.strftime("%d %b %Y")%></small>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </article>
+  </div>
 </div>
