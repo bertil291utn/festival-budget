@@ -1,8 +1,8 @@
-# Festival budget app
+# Festival budget mobile-first design
 
-> RoR capstone project developed. It's is based on an app for grouping payments by goal with your family/friends.
+> RoR capstone project developed. It's is based on an app for grouping payments by a goal with your family/friends. 
 
-![image](https://user-images.githubusercontent.com/24902525/84659805-9b04a600-aedd-11ea-8e50-5a5a5adc23c5.png)
+![image](https://user-images.githubusercontent.com/24902525/85045789-13c16780-b155-11ea-8da9-597991e58d93.png)
 
 ## Built With 
 
@@ -12,6 +12,9 @@
 ## Live Demo
 
 [:globe_with_meridians::computer:](https://festival-budget.herokuapp.com/)
+
+**Try opening on a phone or just inspect your browser.** *Preferably: 500x810 size*
+
 
 ## Getting Started
 
@@ -29,7 +32,7 @@ PostgreSQL: >=9.5
 
 ### Setup
 
-Instal gems with:
+Install gems with:
 
 ```
 bundle install
@@ -38,7 +41,7 @@ bundle install
 Setup database with:
 
 ```
-   rails db:migrate
+rails db:migrate
 ```
 
 ### Usage
@@ -46,11 +49,11 @@ Setup database with:
 Start server with:
 
 ```
-    rails server
+rails server
 ```
 
 - Open `http://localhost:3000/` in your browser, you will see the first screen.
-- Create an user, login  and start using this nice app
+- Create a user, log in  and start using this nice app
 
 ## Testing
 
@@ -58,7 +61,35 @@ Start server with:
 And [Capybara](http://teamcapybara.github.io/capybara/) with SeleniumChrome Driver to integration tests
 
 ### Install & setting up environment 
-Follow these [instructions](https://www.codewithjason.com/rails-testing-hello-world-using-rspec-capybara/) to set up your environment. This integrations configuration it's set up to run on Chrome browser, be sure you have installed first. 
+
+1. Let’s add the following to our Gemfile under the :development, :test group.
+    ```
+    # The RSpec testing framework
+    gem 'rspec-rails'
+
+    # Capybara, the library that allows us to interact with the browser using Ruby
+    gem 'capybara'
+
+    # The following gems aids with the nuts and bolts
+    # of interacting with the browser.
+    gem 'webdrivers'
+    ```
+
+2. Install Rspec
+
+    Although we’ve already installed the RSpec gem, we haven’t installed RSpec into our application. 
+    ```
+    $ rails g rspec:install
+    ```
+
+3. Add the following to the bottom of `spec/rails_helper.rb:`
+
+    ```
+    Capybara.default_driver = :selenium_chrome
+    ```
+
+
+    Check [these instructions](https://www.codewithjason.com/rails-testing-hello-world-using-rspec-capybara/) if you have problems.
 
 ### Run
 
@@ -68,12 +99,58 @@ Follow these [instructions](https://www.codewithjason.com/rails-testing-hello-wo
 `rspec spec/<you directory path>/<your file name>.rb`
 - Check if your test passed or it's throwing errors
 
-### Deployment
+## Deployment on Heroku
 
-Follow these [instructions](https://www.theodinproject.com/courses/ruby-on-rails/lessons/your-first-rails-application-ruby-on-rails?ref=lnav#step-3-deploy-your-rails-application) to deploy your application on [Heroku](https://www.heroku.com/) 
+In before hand you have had committed all your changes
 
-- After **Step 3.1** skip to **Step 3.5** because already we have all before changes.
-  
+1. In your terminal run to create a Heroku Application
+    ```
+    heroku create
+    ```
+2. Configure the Gemfile
+    To deploy a Rails application, we need to change some settings.
+
+    First, we need to open the Gemfile and edit it.
+    When VSCode opens, you should see a list of files on the left side of the screen. Click on Gemfile to open it in the editor. Then, delete the line that says, `gem 'sqlite3'` and replace the line you just deleted with the following:
+    ```
+    group :development, :test do
+    gem 'sqlite3'
+    end
+
+    group :production do
+    gem 'pg'
+    end
+    ```
+3. Install bundle   
+    Next, we need to tell Ruby, Git, and Heroku that we’ve changed the Gemfile. To do this, we can simply run
+
+    ```
+    bundle install --without production
+    ```
+4. Push to Heroku
+    Now that we’ve committed the files, we can push to Heroku:
+    ```
+    git push heroku master
+    ```
+5. Migrate the Database on Heroku
+    Similar to what we did locally before we launched our app, we need to migrate the database on Heroku, which we can do with the Heroku CLI.
+
+    Run this command:
+
+    ```
+    heroku run rails db:migrate
+    ```
+6. Visit your new application
+
+    It’s time to see your app on the web! If you are using Linux or Mac, you can quickly open your app with the command below. If you are using WSL it will not open automatically, however, you will get an error message containing the link to copy and paste in your browser:
+
+    ```
+    heroku open
+    ```
+
+    Check [these instructions](https://www.theodinproject.com/courses/ruby-on-rails/lessons/your-first-rails-application-ruby-on-rails?ref=lnav#step-3-deploy-your-rails-application) if you have problems.
+
+
 
 ## Author
 
@@ -88,7 +165,7 @@ Follow these [instructions](https://www.theodinproject.com/courses/ruby-on-rails
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 ## Show your support
 
