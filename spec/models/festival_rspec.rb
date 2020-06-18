@@ -1,4 +1,4 @@
-require_relative '../rails_helper'
+require 'rails_helper'
 
 RSpec.describe Festival, type: :model do
   describe 'association' do
@@ -7,11 +7,13 @@ RSpec.describe Festival, type: :model do
   end
 
   describe 'validations' do
-    it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:budget) }
-    it { should validate_length_of(:name).is_at_least(7) }
-    it {
+    subject { create :festival }
+    it 'festival model' do
+      should validate_presence_of(:name)
+      should validate_presence_of(:budget)
+      should validate_presence_of(:imageok)
+      should validate_length_of(:name).is_at_least(7)
       should validate_numericality_of(:budget).is_greater_than(100)
-    }
+    end
   end
 end
