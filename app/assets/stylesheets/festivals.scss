@@ -1,0 +1,41 @@
+// Place all the styles related to the Festivals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.festivals {
+  .default_image {
+    width: 250px;
+  }
+
+  a:hover {
+    color: unset;
+    text-decoration: none;
+  }
+
+  .card {
+    color: $texto-primary;
+    min-height: 445px;
+  }
+}
+
+.festival_show {
+  .progress {
+    font-size: 40px;
+    height: 70px;
+  }
+
+  .media {
+    img {
+      height: 150px;
+    }
+
+    .image-cropper {
+      height: 150px;
+      width: 150px;
+    }
+  }
+
+  .default_image {
+    width: 200px;
+  }
+}

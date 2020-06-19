@@ -1,0 +1,37 @@
+<%= javascript_include_tag 'festivals' %>
+<%= form_with(model: user, html: {multipart: true},local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div id="imagen" class="d-none">
+    <br>
+    <img id="img-upload" alt="preview" class="w-50 d-block mx-auto ">
+    <br>
+  </div>
+  <div class="form-group">
+    <div class="custom-file ">
+      <%= form.file_field :image,class: 'custom-file-input',onChange: 'preview()' %>
+      <%= form.label :image, "Upload picture", class: 'custom-file-label' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= form.text_field :fullname, class: 'form-control',placeholder: 'Fullname' %>
+  </div>
+  <div class="form-group">
+    <%= form.text_field :username, class: 'form-control',placeholder: 'Username' %>
+  </div>
+  <div class="form-group">
+    <%= form.email_field :email, class: 'form-control',placeholder: 'E-mail' %>
+  </div>
+  <div class="row">
+    <div class='col'>
+      <%= form.submit 'Sign up', class: 'btn btn-secondary w-100' %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<article class="timeline">
+  <div class="pig-weights bg-light shadow-sm">
+    <p> Savings amount</p>
+    <p class="font-bold"><%= number_to_currency(sum(@transactions))%> </p>
+  </div>
+  <div class="tarjetas">
+    <%@transactions.each do |t|%>
+      <div class="card shadow-sm my-4">
+        <div class="row no-gutters">
+          <div class="col-3 p-2">
+            <%if t.festival.imageok.exists?%>
+              <%= image_tag t.festival.imageok.url,class:'card-img w-100' %>
+            <% else %>
+              <%= image_tag default_image,class:'default_image mx-auto' %>
+            <%end%>
+          </div>
+          <div class="col-sm-9">
+            <div class="p-2">
+              <div class="d-flex justify-content-between">
+                <h6 class="card-title"><%=t.description%></h6>
+                <h7 class="font-bold"><%=number_to_currency(t.amount)%></h7>
+              </div>
+              <%= link_to festival_path(t.festival) do %>
+                <p class="card-text"><%=t.festival.name%> </p>
+              <%end%>
+              <hr>
+              <p class="card-text"><small class="text-muted card-date"><%= t.created_at.strftime("%d %b %Y")%></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</article>
+<%= render 'fab_button' %></div>

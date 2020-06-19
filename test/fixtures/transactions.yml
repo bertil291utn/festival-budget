@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyString
+  amount: 9.99
+  user: one
+  festival: one
+
+two:
+  description: MyString
+  amount: 9.99
+  user: two
+  festival: two
