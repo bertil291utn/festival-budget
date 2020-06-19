@@ -1,0 +1,25 @@
+<article class="timeline">
+  <div class="pig-weights bg-light shadow-sm">
+    <p> Extra savings amount</p>
+    <p class="font-bold"><%= number_to_currency(sum(@transactions))%> </p>
+  </div>
+  <div class="tarjetas">
+    <%@transactions.each do |t|%>
+      <div class="card shadow-sm my-4">
+        <div class="row no-gutters">
+          <div class="w-100">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title"><%=t.description%></h5>
+                <h6 class="font-bold"><%=number_to_currency(t.amount)%></h6>
+              </div>
+              <hr>
+              <p class="card-text"><small class="text-muted card-date"><%= t.created_at.strftime("%d %b %Y")%></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</article>
+<%= render 'fab_button' %>

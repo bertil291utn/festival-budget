@@ -1,0 +1,12 @@
+<%= javascript_include_tag 'transactions' %>
+<div class="btn-group-fab" role="group" aria-label="FAB Menu">
+  <div>
+    <%data_withfestival=current_page?(controller: 'transactions')%>
+    <%= link_to '<button type="button" class="btn btn-main btn-secondary has-tooltip" data-placement="left" title="Menu"> <i class="fa fa-plus"></i> </button>'.html_safe, new_transaction_path,  {remote: :true, 'data-toggle': 'modal', 'data-target': '#modal-window','data-withfestival': data_withfestival } %>
+  </div>
+</div>
+<div id="modal-window" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content"></div>
+  </div>
+</div>

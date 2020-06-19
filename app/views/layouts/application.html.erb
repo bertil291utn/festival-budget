@@ -1,28 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FestivalBudget</title>
+    <title>Festival Budget</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag 'loachella-icon2.svg' %>
+    <%= stylesheet_link_tag 'application', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
   </head>
   <body>
-    <nav>
-      this is the navbar 
-    </nav>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
+    <% unless no_show_nav_bar %>
+      <nav class="navbar bg-primary nav">
+        <%current_page=current_page('festivals','show')%>
+        <%= link_to redirect_to_action,class: 'navbar-brand' do %>
+          <i class="fa <%=show_icon%> ml-2"></i>
+        <% end %>
+        <span class="text-center"><%= title_navbar %></span>
+      </nav>
     <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-    <div class="container pt-3">
+    <% if notice || alert%>
+      <p class="alert alert-<%=notice ? 'success' : 'danger'%>" id="alert-select-transaction"><%= notice ? notice : alert %></p>
+    <%end%>
+    <div class="h-100">
       <%= yield %>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+      setTimeout("$('#alert-select-transaction').fadeOut('slow')", 2000)
+    </script>
   </body>
 </html>

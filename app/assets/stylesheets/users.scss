@@ -1,3 +1,62 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.user-profile {
+  height: 100%;
+  background: rgb(19, 52, 95);
+  background: linear-gradient(180deg, rgba(19, 52, 95, 1) 0%, rgba(29, 81, 131, 1) 32%, rgba(47, 129, 189, 1) 74%);
+  color: $texto-light;
+  // overflow-y: hidden;
+
+  a {
+    color: $texto-light;
+  }
+
+  a:hover {
+    color: $texto-light;
+    text-decoration: none;
+  }
+
+  a:focus {
+    box-shadow: none;
+  }
+
+  .list-link {
+    .btn {
+      padding: 0;
+    }
+
+    a {
+      text-align: left;
+      border-bottom: 0.05rem solid $texto-light;
+    }
+
+    .list-link-item {
+      text-align: left;
+      display: flex;
+      margin: 0 auto;
+      min-width: 280px;
+
+      a {
+        padding-bottom: 20px;
+      }
+    }
+
+    .rounded-icon {
+      border: 2px solid $texto-light;
+      display: inline-block;
+      border-radius: 50%;
+      width: 70px;
+      height: 65px;
+      text-align: center;
+      padding-top: 1px;
+      margin-right: 20px;
+    }
+  }
+
+  .image-cropper {
+    width: 250px;
+    height: 250px;
+  }
+
+  .default_image {
+    height: 250px;
+  }
+}

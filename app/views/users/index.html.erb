@@ -1,0 +1,28 @@
+<div class="user-profile text-center p-3 pt-4">
+  <%if @user.image.exists?%>
+    <div class="image-cropper mx-auto my-3">
+      <%= image_tag @user.image.url,class:'profile-pic' %>
+    </div>
+  <% else %>
+    <%= image_tag default_image,class:'default_image my-3' %>
+  <%end%>
+  <p><%=@user.fullname%></p>
+  <div class="list-link mt-5">
+    <div class="list-link-item mb-4">
+      <div class="rounded-icon"><i class="fa fa-ticket" aria-hidden="true"></i></div>
+      <%= link_to 'Savings to go to a festival', transactions_path, class: 'btn btn-link w-100' %>
+    </div>
+    <div class="list-link-item mb-4">
+      <div class="rounded-icon"><i class="fa fa-ban" aria-hidden="true"></i></div>
+      <%= link_to 'Savings with no festivals', no_festival_path, class: 'btn btn-link w-100' %>
+    </div>
+    <div class="list-link-item mb-4">
+      <div class="rounded-icon"><i class="fa fa-music" aria-hidden="true"></i></div>
+      <%= link_to 'All festivals', festivals_path, class: 'btn btn-link w-100' %>
+    </div>
+    <div class="list-link-item mb-4">
+      <div class="rounded-icon"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+      <%= link_to 'Log out', logout_path, class: 'btn btn-link w-100' %>
+    </div>
+  </div>
+</div>

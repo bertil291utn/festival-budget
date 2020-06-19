@@ -1,0 +1,12 @@
+$body-bg: #f1f3f2;
+$body-color: #434b54;
+
+$font-family-sans-serif: 'proxima_novalight', sans-serif;
+$theme-colors: (
+  'primary': #3778c2,
+  'secondary': #5fb523,
+  'light': #faf9fa,
+  'dark': #222,
+);
+
+@import 'bootstrap.scss';

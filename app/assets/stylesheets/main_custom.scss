@@ -1,0 +1,148 @@
+$texto-primary: #434b54;
+$texto-secondary: #555e67;
+$texto-tertiary: #878a8f;
+$texto-last: #989da3;
+$texto-light: #faf9fa;
+
+:root {
+  font-size: 40px;
+}
+
+@font-face {
+  font-family: "proxima_novabold";
+  src:
+    asset-url("proxima-nova-bold-webfont.woff2") format("woff2"),
+    asset-url("proxima-nova-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "proxima_novalight";
+  src:
+    asset-url("proxima-nova-light-webfont.woff2") format("woff2"),
+    asset-url("proxima-nova-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.font-bold {
+  font-family: "proxima_novabold", sans-serif;
+}
+
+.btn-link {
+  color: $texto-tertiary;
+}
+
+.btn-link:focus {
+  box-shadow: none;
+}
+
+.btn-link:hover {
+  color: $texto-tertiary;
+  text-decoration: none;
+}
+
+.form {
+  img {
+    margin-bottom: 40%;
+  }
+}
+
+form,
+.form {
+  input[type="submit"] {
+    text-transform: uppercase;
+  }
+
+  a.btn {
+    text-transform: uppercase;
+  }
+
+  #error_explanation {
+    font-size: 30px;
+
+    h2 {
+      font-size: 1em;
+    }
+
+    ul {
+      color: #f00;
+    }
+  }
+}
+
+.notice,
+.alert {
+  margin-bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+.texto-light {
+  color: $texto-light;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
+  color: $texto-light;
+
+  span {
+    flex: 1;
+    text-transform: uppercase;
+  }
+
+  .menu {
+    width: 80%;
+    justify-content: space-between;
+
+    .menu-item {
+      float: left;
+      margin: 0 15px;
+
+      .active {
+        a {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.navbar-brand,
+.navbar-toggler-icon {
+  i {
+    font-size: 1.3rem;
+    color: $texto-light;
+  }
+}
+
+.navbar-toggler-icon {
+  margin: 3px;
+}
+
+.image-cropper {
+  $tam_image: 80px;
+
+  width: $tam_image;
+  height: $tam_image;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.profile-pic {
+  display: inline;
+  margin-left: -20%;
+  height: 100%;
+  width: auto;
+}

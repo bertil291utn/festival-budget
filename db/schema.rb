@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_08_155712) do
+ActiveRecord::Schema.define(version: 2020_06_14_023510) do
+
+  create_table "festivals", force: :cascade do |t|
+    t.string "name"
+    t.decimal "budget"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "imageok_file_name"
+    t.string "imageok_content_type"
+    t.integer "imageok_file_size"
+    t.datetime "imageok_updated_at"
+    t.index ["user_id"], name: "index_festivals_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string "description"
+    t.decimal "amount"
+    t.integer "user_id"
+    t.integer "festival_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["festival_id"], name: "index_transactions_on_festival_id"
+    t.index ["user_id"], name: "index_transactions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -18,6 +42,10 @@ ActiveRecord::Schema.define(version: 2020_06_08_155712) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
 end

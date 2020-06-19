@@ -1,0 +1,87 @@
+// Place all the styles related to the transactions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn-group-fab {
+  position: fixed;
+  width: 50px;
+  height: auto;
+  right: 20px;
+  bottom: 20px;
+}
+
+.btn-group-fab div {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.btn-group-fab .btn {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 4px auto;
+}
+
+.btn-group-fab .btn-main {
+  width: 150px;
+  height: 150px;
+  right: 50%;
+  margin-right: -25px;
+  z-index: 9;
+
+  i {
+    font-size: 60px;
+  }
+}
+
+.pig-weights {
+  p {
+    margin: 0;
+  }
+
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.tarjetas {
+  font-size: 35px;
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: unset;
+  }
+
+  a:hover {
+    color: unset;
+    text-decoration: none;
+  }
+
+  .card-title {
+    margin-bottom: 0.3rem;
+    font-size: 40px;
+  }
+
+  .card-body {
+    padding: 0.5rem;
+  }
+
+  hr {
+    margin: 0.5rem 0;
+  }
+
+  .default_image {
+    width: 175px;
+  }
+}
+
+.modal-dialog-centered {
+  max-width: 100%;
+}

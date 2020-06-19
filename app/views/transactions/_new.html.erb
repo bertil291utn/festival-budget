@@ -1,0 +1,10 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Feed the piglet </h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <%=image_tag 'https://image.freepik.com/vector-gratis/happy-piggy-bank-mascot-design_35422-31.jpg', class: 'd-block w-25 mx-auto '%>
+  <%= render 'form', transaction: @transaction %>
+</div>
