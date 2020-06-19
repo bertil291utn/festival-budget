@@ -150,7 +150,12 @@ In before hand you have had committed all your changes
 
     Check [these instructions](https://www.theodinproject.com/courses/ruby-on-rails/lessons/your-first-rails-application-ruby-on-rails?ref=lnav#step-3-deploy-your-rails-application) if you have problems.
 
+## Improvents
 
+Features we are going to add to this app:
+- Popping up a message when the budget for a festival has reached out
+- Adding also web design to have both web and mobile designs
+- Save in media management server (Cloudinary or S3) images and all media-related 
 
 ## Author
 
@@ -169,5 +174,5 @@ Contributions, issues, and feature requests are welcome!
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+If you got until here, show your love hitting the ⭐️ button, I'd really appreciate it.
 
