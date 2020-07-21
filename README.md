@@ -18,7 +18,7 @@
 
 ## Getting Started
 
-In order to start with this project You need the next:
+In order to start this project, you will need:
 
 1. [Ruby environment](https://www.ruby-lang.org/en/documentation/installation/) installed
 2. [Ruby on Rails](https://www.theodinproject.com/courses/ruby-on-rails/lessons/your-first-rails-application-ruby-on-rails) framework
