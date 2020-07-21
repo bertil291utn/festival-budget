@@ -11,7 +11,10 @@
 
 ## Live Demo
 
-[:globe_with_meridians::computer:](https://festival-budget.herokuapp.com/)
+🎬 [Clip description](https://www.loom.com/share/8ffc1838ed3541879753ffe16ce833bb)
+
+💻 <a href="https://festival-budget.herokuapp.com/" target="_blank">Go live</a>
+
 
 **Try opening on a phone or just inspect your browser.** *Preferably: 500x810 size*
 
