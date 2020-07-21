@@ -62,7 +62,7 @@ And [Capybara](http://teamcapybara.github.io/capybara/) with SeleniumChrome Driv
 
 ### Install & setting up environment 
 
-1. Let’s add the following to our Gemfile under the :development, :test group.
+1. Let’s add the following to our Gemfile under the `:development` and `:test` group.
     ```
     # The RSpec testing framework
     gem 'rspec-rails'
@@ -101,7 +101,7 @@ And [Capybara](http://teamcapybara.github.io/capybara/) with SeleniumChrome Driv
 
 ## Deployment on Heroku
 
-In before hand you have had committed all your changes
+In beforehand you have had committed all your changes
 
 1. In your terminal run to create a Heroku Application
     ```
@@ -150,7 +150,7 @@ In before hand you have had committed all your changes
 
     Check [these instructions](https://www.theodinproject.com/courses/ruby-on-rails/lessons/your-first-rails-application-ruby-on-rails?ref=lnav#step-3-deploy-your-rails-application) if you have problems.
 
-## Improvents
+## Improvements
 
 Features we are going to add to this app:
 - Popping up a message when the budget for a festival has reached out
