@@ -1,6 +1,6 @@
 # Festival budget mobile-first design
 
-> RoR capstone project developed. It's is based on an app for grouping payments by a goal with your family/friends. 
+### This is an app for grouping payments by a goal with your family/friends. Want to go to a festival musical, use this app to do a budget
 
 ![image](https://user-images.githubusercontent.com/24902525/85045789-13c16780-b155-11ea-8da9-597991e58d93.png)
 
